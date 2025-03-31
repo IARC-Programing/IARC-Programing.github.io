@@ -1,15 +1,22 @@
 import clsx from "clsx";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
+import Link from "@docusaurus/Link";
 
 const FeatureList = [
   {
     title: "คู่มื่อการใช้ระบบ In App Notification",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    imgSrc: "/push-notify/win-5.png",
     description: (
       <>
         วิธีการใช้ In App Notification สำหรับคอมพิวเตอร์, โทรศัพท์มือถือระบบ
         Android และ iOS หลังจาก Line Notify หยุดให้บริการในวันที่ 1 เมษายน 2568
+        <Link
+          className='button button--secondary button--lg'
+          to='/docs/emanufac/notify/inapp-notify'
+        >
+          ดูคู่มือ
+        </Link>
       </>
     ),
   },
@@ -35,11 +42,11 @@ const FeatureList = [
   // },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ imgSrc, title, description }) {
   return (
     <div className={clsx("col col--4")}>
       <div className='text--center'>
-        <Svg className={styles.featureSvg} role='img' />
+        <img className={styles.featureSvg} role='img' src={imgSrc} />
       </div>
       <div className='text--center padding-horiz--md'>
         <Heading as='h3'>{title}</Heading>
